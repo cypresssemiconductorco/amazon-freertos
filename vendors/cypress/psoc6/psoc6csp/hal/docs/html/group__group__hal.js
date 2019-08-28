@@ -1,0 +1,25 @@
+var group__group__hal =
+[
+    [ "Result Type", "group__group__result.html", "group__group__result" ],
+    [ "ADC (Analog to Digital Converter)", "group__group__hal__adc.html", "group__group__hal__adc" ],
+    [ "I2C (Inter-Integrated Circuit)", "group__group__hal__i2c.html", "group__group__hal__i2c" ],
+    [ "CRC (Cyclic Redundancy Check)", "group__group__hal__crc.html", "group__group__hal__crc" ],
+    [ "DAC (Digital to Analog Converter)", "group__group__hal__dac.html", "group__group__hal__dac" ],
+    [ "Flash", "group__group__hal__flash.html", "group__group__hal__flash" ],
+    [ "GPIO (General Purpose Input Output)", "group__group__hal__gpio.html", "group__group__hal__gpio" ],
+    [ "HWMGR (Hardware Manager)", "group__group__hal__hwmgr.html", "group__group__hal__hwmgr" ],
+    [ "INTERCONNECT (Internal digital routing)", "group__group__hal__interconnect.html", "group__group__hal__interconnect" ],
+    [ "LPTIMER (Low-Power Timer)", "group__group__hal__lptimer.html", "group__group__hal__lptimer" ],
+    [ "PWM (Pulse Width Modulator)", "group__group__hal__pwm.html", "group__group__hal__pwm" ],
+    [ "QSPI (Quad Serial Peripheral Interface)", "group__group__hal__qspi.html", "group__group__hal__qspi" ],
+    [ "RTC (Real-Time Clock)", "group__group__hal__rtc.html", "group__group__hal__rtc" ],
+    [ "SDHC (SD Host Controller)", "group__group__hal__sdhc.html", "group__group__hal__sdhc" ],
+    [ "SDIO (Secure Digital Input Output)", "group__group__hal__sdio.html", "group__group__hal__sdio" ],
+    [ "SPI (Serial Peripheral Interface)", "group__group__hal__spi.html", "group__group__hal__spi" ],
+    [ "SYSTEM (Power Management and System Clock)", "group__group__hal__system.html", "group__group__hal__system" ],
+    [ "TIMER (Timer/Counter)", "group__group__hal__timer.html", "group__group__hal__timer" ],
+    [ "TRNG (True Random Number Generator)", "group__group__hal__trng.html", "group__group__hal__trng" ],
+    [ "UART (Universal Asynchronous Receiver-Transmitter)", "group__group__hal__uart.html", "group__group__hal__uart" ],
+    [ "USB Device", "group__group__hal__usb__dev.html", "group__group__hal__usb__dev" ],
+    [ "WDT (Watchdog Timer)", "group__group__hal__wdt.html", "group__group__hal__wdt" ]
+];

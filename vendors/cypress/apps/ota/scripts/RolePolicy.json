@@ -1,0 +1,1 @@
+{"Version": "2012-10-17", "Statement": [{"Effect": "Allow", "Action": ["iam:GetRole", "iam:PassRole"], "Resource": "arn:aws:iam::<your_account_id>:role/<your_role_name>"}]}
