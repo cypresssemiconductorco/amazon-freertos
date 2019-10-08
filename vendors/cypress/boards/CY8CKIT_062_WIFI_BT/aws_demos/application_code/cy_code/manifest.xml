@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boards>
+  <board>
+    <id>CY8CKIT-062-WIFI-BT</id>
+    <board_uri>http://git-ore.aus.cypress.com/repo-staging/TARGET_CY8CKIT-062-WIFI-BT.git</board_uri>
+    <commit>develop</commit>
+
+    <chips>
+      <mcu>CY8C6247BZI-D54</mcu>
+      <radio>CYW4343WKUBG</radio>
+    </chips>
+
+    <name>CY8CKIT-062-WIFI-BT</name>
+    <summary>The PSoC 6 WiFi-BT Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC 62 MCU (CY8C6247BZI-D54) and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).</summary>
+    <prov_capabilities>psoc6 cyw43xxx arduino led switch wifi bt usb_device usb_host capsense qspi memory</prov_capabilities>
+    <description>
+      <![CDATA[
+        <div class="category">Kit Features:</div><ul>
+        <li>BLE v5.0</li>
+        <li>Serial memory interface</li>
+        <li>PDM-PCM digital microphone interface</li>
+        <li>Industry-leading CapSense</li>
+        <li>Full-speed USB</li>
+        <li>IEEE 802.11a/b/g/n WLAN</li>
+        </ul><p/>
+
+        <div class="category">Kit Contents:</div><ul>
+        <li>CY8CKIT-062-WIFI-BT evaluation board</li>
+        <li>TFT display shield with a 2.4" TFT display, light sensor, 6-axis motion sensor, and digital microphone</li>
+        <li>USB cable</li>
+        </ul>
+      ]]>
+    </description>
+    <documentation_url>http://www.cypress.com/documentation/development-kitsboards/psoc-6-wifi-bt-pioneer-kit</documentation_url>
+  </board>
+</boards>

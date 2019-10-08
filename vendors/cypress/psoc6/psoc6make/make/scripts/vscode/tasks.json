@@ -1,0 +1,200 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "GetLibs",
+            "type": "shell",
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe getlibs"
+                ],                
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make getlibs"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make getlibs"
+                ],                
+            },            
+            "problemMatcher": []
+        },
+        {
+            "label": "Refresh",
+            "type": "shell",
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe vscode"
+                ],                
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make vscode"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make vscode"
+                ],                
+            },            
+            "problemMatcher": []
+        },        
+        {
+            "label": "Build Debug",
+            "type": "shell",
+
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe CONFIG=Debug"
+                ],
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },             
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Program Debug",
+            "type": "shell",
+
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe CONFIG=Debug program"
+                ],
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },             
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },        
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe CONFIG=Release"
+                ],
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Release"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Release"
+                ],                
+            },              
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }            
+        },
+        {
+            "label": "Program Release",
+            "type": "shell",
+
+            "windows" : {
+                "command": "&&MODUSSHELL&&/bin/bash.exe" ,
+                "args": [
+                    "--norc",
+                    "-c",
+                    "export PATH=/bin:/usr/bin ; &&MODUSSHELL&&/bin/make.exe CONFIG=Release program"
+                ],
+            },
+            "linux" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },
+            "osx" : {
+                "command": "bash",
+                "args": [
+                    "--norc",
+                    "-c",
+                    "make CONFIG=Debug"
+                ],                
+            },             
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ]
+}

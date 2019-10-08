@@ -1,0 +1,103 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch PSoC6 Debug CM4 (OpenOCD)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "&&DEBUGTARGET&&",
+            "servertype": "openocd",
+            "searchDir": [ 
+                "${workspaceRoot}",
+                "&&MODUSPATH&&/tools/openocd-2.1/scripts/",
+            ],
+            "toolchainPath": "&&MODUSPATH&&/tools/gcc-7.2.1-1.0/bin",
+            "serverpath": "&&MODUSPATH&&/tools/openocd-2.1/bin/openocd",
+            "configFiles": [
+                "openocd.tcl"
+            ],
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off",
+            ],
+            "postLaunchCommands": [
+                "monitor reset run",
+                "monitor sleep 200",
+                "monitor psoc6 reset_halt sysresetreq"
+            ],
+            "postRestartCommands": [
+                /*
+                // Following three commands are needed because Cortex-Debug is hardcoded to do a
+                // `monitor reset halt`. Creates a problem for multi core systems like
+                // PSoC6, so this is a workaround. Normally, only a sysresetreq is needed for PSoc6
+                */
+                "monitor reset run",
+                "monitor sleep 200",
+                "monitor psoc6 reset_halt sysresetreq",
+                /*
+                // Following two commands are needed to get gdb and openocd and HW all in sync.
+                // Or, execution context (PC, stack, registers, etc.) look like they are from before reset.
+                // The stepi, is a pretend instruction that does not actually do a stepi, but MUST be done
+                // Its a documented workaround in openocd. Do a 'monitor help' to see more info
+                */
+                "monitor gdb_sync",
+                "stepi"
+            ],
+            // svdFiles are optional can be very large. You can also set 'toolchainPath' and 'serverpath`
+            // in an OS specific way here.
+            "svdFile": "psoc6/psoc6pdl/devices/svd/&&PSOCFAMILY&&.svd",
+            "runToMain": false,          // if true, program will halt at main. Not used for a restart
+            "preLaunchTask": "",        // Set this to run a task from tasks.json before starting a debug session
+            "showDevDebugOutput": false,// Shows output of GDB, helpful when something is not working right
+        },
+        {
+            "name": "Launch PSoC6 Release CM4 (OpenOCD)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "&&RELEASETARGET&&",
+            "servertype": "openocd",
+            "searchDir": [ 
+                "${workspaceRoot}",
+                "&&MODUSPATH&&/tools/openocd-2.1/scripts/",
+            ],
+            "toolchainPath": "&&MODUSPATH&&/tools/gcc-7.2.1-1.0/bin",
+            "serverpath": "&&MODUSPATH&&/tools/openocd-2.1/bin/openocd",
+            "configFiles": [
+                "openocd.tcl"
+            ],
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off",
+            ],
+            "postLaunchCommands": [
+                "monitor reset run",
+                "monitor sleep 200",
+                "monitor psoc6 reset_halt sysresetreq"
+            ],
+            "postRestartCommands": [
+                /*
+                // Following three commands are needed because Cortex-Debug is hardcoded to do a
+                // `monitor reset halt`. Creates a problem for multi core systems like
+                // PSoC6, so this is a workaround. Normally, only a sysresetreq is needed for PSoc6
+                */
+                "monitor reset run",
+                "monitor sleep 200",
+                "monitor psoc6 reset_halt sysresetreq",
+                /*
+                // Following two commands are needed to get gdb and openocd and HW all in sync.
+                // Or, execution context (PC, stack, registers, etc.) look like they are from before reset.
+                // The stepi, is a pretend instruction that does not actually do a stepi, but MUST be done
+                // Its a documented workaround in openocd. Do a 'monitor help' to see more info
+                */
+                "monitor gdb_sync",
+                "stepi"
+            ],
+            // svdFiles are optional can be very large. You can also set 'toolchainPath' and 'serverpath`
+            // in an OS specific way here.
+            "svdFile": "psoc6/psoc6pdl/devices/svd/&&PSOCFAMILY&&.svd",
+            "runToMain": false,          // if true, program will halt at main. Not used for a restart
+            "preLaunchTask": "",        // Set this to run a task from tasks.json before starting a debug session
+            "showDevDebugOutput": false,// Shows output of GDB, helpful when something is not working right
+        }          
+    ]
+}
